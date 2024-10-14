@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        label {
+            margin: 10px 0 5px;
+            display: block;
+        }
+        
+        input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        
+        .navbar a.active {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a class="active" href="main.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="container">
+        <h2>Mechanic Login</h2>
+        <form action="/submit-mechanic-login" method="POST">
+
+            <!-- Username -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Submit Button -->
+            <button onclick="myFunction()">Login</button>
+        </form>
+    </div>
+
+    <marquee style="color:red;">
+        <p><strong>            The Backend is not connected yet. To see the Mechanic Dashboard page , just click directly thorugh login button without inserting login credentials.
+        </strong>
+        </p>
+    </marquee>
+
+    <script>
+        function myFunction() {
+            location.replace("mechanicdashboard.html")
+        }
+    </script>
+
+</body>
+
+</html>

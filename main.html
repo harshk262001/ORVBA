@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Vehicle Breakdown Assistance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        /* Navbar styling */
+        
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        
+        .navbar a.active {
+            background-color: #4CAF50;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .section {
+            display: inline-block;
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section a {
+            display: block;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .section a:hover {
+            background-color: #45a049;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slider-container {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slider img {
+            width: 50%;
+            max-width: 100%;
+            height: auto;
+        }
+        /* For sliding effect */
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            20% {
+                transform: translateX(-100%);
+            }
+            40% {
+                transform: translateX(-200%);
+            }
+            60% {
+                transform: translateX(-300%);
+            }
+            80% {
+                transform: translateX(-400%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        /* Enable automatic sliding */
+        
+        .slider.auto-slide {
+            animation: slide 10s infinite;
+        }
+        /* Button styles */
+        
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a class="active" href="#">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to Road Vehicle Breakdown Assistance</h1>
+        <p>Helping you connect with mechanics in times of need.</p>
+        <div class="slider-container">
+            <div class="slider auto-slide">
+                <img src="image1.jpeg" alt="Image 1">
+                <img src="image2.jpeg" alt="Image 2">
+                <img src="image3.jpeg" alt="Image 3">
+                <img src="image4.jpeg" alt="Image 4">
+                <img src="image2.jpeg" alt="Image 5">
+            </div>
+        </div>
+
+        <!-- Section for Register and Login options -->
+        <div class="section">
+            <h2>Register as a Mechanic</h2>
+            <img src="mechanic.png" alt="Mechanic" style="width:100px;height:100px;">
+            <p>Join our network of qualified mechanics.</p>
+            <a href="mechanicregistration.html">Register</a>
+        </div>
+
+        <div class="section ">
+            <h2>Register as a User</h2>
+            <img src="driver.png" alt="user" style="width:125px;height:125px;">
+            <p>Get fast and reliable roadside assistance.</p>
+            <a href="userregistarion.html">Register</a>
+        </div>
+
+        <div class="section ">
+            <h2>Login as a Mechanic</h2>
+            <img src="mechanic1.png" alt="mechanic login" style="width:100px;height:100px;">
+            <p>Manage your profile and services.</p>
+            <a href="mechaniclogin.html">Login</a>
+        </div>
+
+        <div class="section ">
+            <h2>Login as a User</h2>
+            <img src="profile.png" alt="user login" style="width:125px;height:125px;">
+            <p>Request assistance or view your history.</p>
+            <a href="userlogin.html">Login</a>
+        </div>
+    </div>
+
+
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector('.slider');
+        const totalSlides = slides.children.length;
+
+        // Function for manual sliding
+        function moveSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1;
+            }
+            slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+        }
+    </script>
+
+</body>
+
+</html>
